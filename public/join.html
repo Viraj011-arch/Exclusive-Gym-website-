@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title> MUSCLE HOUSE | Membership Application</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#524835",
+                    "error-container": "#93000a",
+                    "primary": "#ffb779",
+                    "primary-container": "#cd7f32",
+                    "inverse-on-surface": "#2f3131",
+                    "tertiary": "#c7c6c6",
+                    "on-secondary-fixed": "#221b0b",
+                    "on-surface-variant": "#d8c2b2",
+                    "inverse-surface": "#e2e2e2",
+                    "on-primary-fixed": "#2e1500",
+                    "primary-fixed-dim": "#ffb779",
+                    "on-primary-fixed-variant": "#6c3a00",
+                    "on-tertiary-container": "#2a2a2a",
+                    "surface-container": "#1e2020",
+                    "secondary-fixed": "#f0e0c8",
+                    "surface-container-lowest": "#0d0f0f",
+                    "on-tertiary": "#303030",
+                    "surface-container-highest": "#333535",
+                    "secondary": "#d3c5ad",
+                    "surface-container-low": "#1a1c1c",
+                    "background": "#121414",
+                    "on-surface": "#e2e2e2",
+                    "inverse-primary": "#8e4e00",
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-primary-container": "#432200",
+                    "outline": "#a18d7f",
+                    "secondary-fixed-dim": "#d3c5ad",
+                    "primary-fixed": "#ffdcc1",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-error": "#690005",
+                    "surface-variant": "#333535",
+                    "on-secondary-container": "#c5b79f",
+                    "surface-tint": "#ffb779",
+                    "on-error-container": "#ffdad6",
+                    "surface": "#121414",
+                    "on-primary": "#4c2700",
+                    "surface-bright": "#383939",
+                    "on-secondary": "#382f1e",
+                    "outline-variant": "#534438",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#121414",
+                    "on-secondary-fixed-variant": "#4f4533",
+                    "on-background": "#e2e2e2",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "tertiary-container": "#929191",
+                    "surface-container-high": "#282a2a",
+                    "tertiary-fixed-dim": "#c7c6c6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-md": "24px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "margin-desktop": "64px",
+                    "stack-lg": "48px",
+                    "stack-sm": "12px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-xl": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(18, 20, 20, 0.7);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(247, 231, 206, 0.2);
+        }
+        .step-indicator-active {
+            width: 48px;
+            height: 2px;
+            background: #ffb779;
+        }
+        .step-indicator-inactive {
+            width: 48px;
+            height: 2px;
+            background: rgba(216, 194, 178, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #534438;
+            border-radius: 2px;
+        }
+        .hero-overlay {
+            background: radial-gradient(circle at center, transparent 0%, #121414 100%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-outline-variant/30 px-margin-desktop py-4 max-w-[1440px] left-1/2 -translate-x-1/2 flex justify-between items-center">
+<a href="index.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-primary hover:text-white transition-colors uppercase">Muscle House</a>
+<div class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="font-body-md text-body-md tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="membership.html">Membership</a>
+<a class="font-body-md text-body-md tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+</div>
+<a href="join.html" class="bg-primary text-on-primary-container px-6 py-2 font-label-md text-label-md tracking-widest uppercase transition-transform scale-95 active:opacity-80 inline-block text-center font-bold">Join Now</a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative min-h-screen pt-[140px] pb-stack-lg flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Atmospheric Element -->
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover grayscale" data-alt="A moody and dramatic ultra-luxury interior of a private wellness club featuring dark slate walls, soft amber cove lighting reflecting on polished concrete floors, and a distant steam room with frosted glass panels. The atmosphere is quiet, exclusive, and high-tech, utilizing a deep obsidian and brushed bronze color palette consistent with elite performance spaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD0qpmvU5amCcXwmz7ArcTYgVT58wcIJFj8oECe2Eo-ZY71tf9d3aFS-RTNAbeN2FnUz40fMDPZJYc7D2ArNi4O2iBHzpKIOGlTK9LmWKucfXn1vPq-wAkhBUX85Ge6ZAppZlVKwWgdp62qzt_iYsocq2MqjtqSvH6aWSyDHZm9lv6txWMBTwgXkHGtHg5AtMq-YOHvx3r72VddirHJLtAedv_bdbtpZmeFE6MxLK_A89fCxZbVmZPAfebsWI7NARIfNtaDSPFh4A"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<!-- Application Container -->
+<div class="relative z-10 w-full max-w-[800px] px-margin-mobile md:px-0">
+<!-- Header Copy -->
+<div class="text-center mb-stack-lg">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2 tracking-tighter">Application for Private Membership</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[600px] mx-auto opacity-80">Access to Elite Ascent is strictly limited to ensure an unparalleled environment for our community.</p>
+</div>
+<!-- Glassmorphic Multi-Step Form -->
+<div class="glass-panel p-stack-md md:p-12 rounded-lg shadow-2xl relative overflow-hidden">
+<!-- Progress Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-stack-sm">
+<div class="flex gap-4 items-center">
+<div class="step-indicator-active" id="step-marker-1"></div>
+<div class="step-indicator-inactive" id="step-marker-2"></div>
+<div class="step-indicator-inactive" id="step-marker-3"></div>
+</div>
+<div class="font-label-sm text-label-sm tracking-[0.3em] uppercase text-primary" id="step-label">
+                        Step 01: Personal Wellness Profile
+                    </div>
+</div>
+<!-- Form Steps Content -->
+<form class="space-y-stack-lg" id="membershipForm">
+<!-- STEP 1: Personal Wellness Profile -->
+<div class="step-content space-y-gutter" id="step-1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Full Legal Name</label>
+<input id="joinName" name="name" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="ALEXANDER VANCE" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Email Address</label>
+<input id="joinEmail" name="email" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="AV@ELITE.CO" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Primary Residence / HQ</label>
+<input id="joinResidence" name="residence" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="ZURICH, SWITZERLAND" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Fitness Goal</label>
+<div class="flex flex-wrap gap-stack-sm pt-2">
+<label class="cursor-pointer group">
+<input class="hidden peer" name="level" type="radio" value="Weight Loss" checked/>
+<span class="px-6 py-2 border border-outline-variant text-label-sm uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary group-hover:border-primary transition-all">Weight Loss</span>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="level" type="radio" value="Muscle Gain"/>
+<span class="px-6 py-2 border border-outline-variant text-label-sm uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary group-hover:border-primary transition-all">Muscle Gain</span>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="level" type="radio" value="General Fitness"/>
+<span class="px-6 py-2 border border-outline-variant text-label-sm uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary group-hover:border-primary transition-all">General Fitness</span>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="level" type="radio" value="Athlete Training"/>
+<span class="px-6 py-2 border border-outline-variant text-label-sm uppercase tracking-widest peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary group-hover:border-primary transition-all">Athlete Training </span>
+</label>
+</div>
+</div>
+</div>
+<!-- STEP 2: Lifestyle & Goals (Hidden by default) -->
+<div class="step-content hidden space-y-gutter" id="step-2">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">What is your primary wellness objective?</label>
+<textarea id="joinObjective" name="wellness_objective" class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase resize-none custom-scrollbar" placeholder="DESCRIBE YOUR LONG-TERM VISION FOR PERSONAL PERFORMANCE AND LONGEVITY..." rows="3"></textarea>
+</div>
+<div class="space-y-4">
+<label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Core Interests (Select Three)</label>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-stack-sm">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded-none border-outline-variant bg-transparent text-primary focus:ring-offset-background focus:ring-primary interest-checkbox" type="checkbox" name="interests" value="Cryotherapy"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Cryotherapy</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded-none border-outline-variant bg-transparent text-primary focus:ring-offset-background focus:ring-primary interest-checkbox" type="checkbox" name="interests" value="Precision Yoga"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Precision Yoga</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded-none border-outline-variant bg-transparent text-primary focus:ring-offset-background focus:ring-primary interest-checkbox" type="checkbox" name="interests" value="Biometric Lab"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Biometric Lab</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded-none border-outline-variant bg-transparent text-primary focus:ring-offset-background focus:ring-primary interest-checkbox" type="checkbox" name="interests" value="Neural Coaching"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Neural Coaching</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded-none border-outline-variant bg-transparent text-primary focus:ring-offset-background focus:ring-primary interest-checkbox" type="checkbox" name="interests" value="Private Spa"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Private Spa</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded-none border-outline-variant bg-transparent text-primary focus:ring-offset-background focus:ring-primary interest-checkbox" type="checkbox" name="interests" value="Nutrition Lab"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Nutrition Lab</span>
+</label>
+</div>
+</div>
+</div>
+<!-- STEP 3: Referral Source (Hidden by default) -->
+<div class="step-content hidden space-y-gutter" id="step-3">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Referral Source / Current Member</label>
+<input id="joinReferral" name="referral_source" class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="NAME OF SPONSORING MEMBER OR ORGANIZATION" type="text"/>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 border border-primary/20 bg-primary/5">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<p class="font-body-md text-on-surface-variant text-sm">By submitting this application, you acknowledge that Elite Ascent maintains a strict non-disclosure policy for all members and high-performance protocols.</p>
+</div>
+<label class="flex items-center gap-3 cursor-pointer group pt-4">
+<input id="joinAgree" required class="w-5 h-5 rounded-none border-outline-variant bg-transparent text-primary focus:ring-offset-background focus:ring-primary" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">I AGREE TO THE LUXURY WELLNESS CHARTER &amp; TERMS OF MEMBERSHIP</span>
+</label>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex justify-between items-center pt-8 border-t border-outline-variant/30">
+<button class="hidden font-label-md text-label-md text-on-surface-variant hover:text-primary tracking-widest uppercase transition-colors flex items-center gap-2" id="prevBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span> Back
+                        </button>
+<div class="flex-grow"></div>
+<button class="bg-primary text-on-primary-container px-12 py-4 font-label-md text-label-md tracking-widest uppercase transition-transform scale-95 active:opacity-80 flex items-center gap-2" id="nextBtn" type="button">
+                            Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Subtle Decorative Element -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 border border-primary/10 rounded-full blur-2xl"></div>
+</div>
+<!-- Form Footer -->
+<div class="mt-stack-md text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant tracking-widest uppercase opacity-60">Our membership committee reviews applications on a rolling basis.</p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-lg border-t border-primary/20 bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col">
+<div class="font-headline-lg text-headline-lg text-primary mb-stack-sm">ELITE ASCENT</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">Redefining the pinnacle of human longevity through technical precision and luxury sanctuary.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="font-label-md text-label-md text-primary tracking-widest uppercase mb-2">Navigation</div>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Locations</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Private Membership</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+</div>
+<div class="flex flex-col gap-4">
+<div class="font-label-md text-label-md text-primary tracking-widest uppercase mb-2">Legal</div>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<div class="mt-4 font-body-md text-xs text-on-surface-variant/40 tracking-wider">© 2024 ELITE ASCENT LUXURY WELLNESS. ALL RIGHTS RESERVED.</div>
+</div>
+</div>
+</footer>
+<script>
+        let currentStep = 1;
+        const totalSteps = 3;
+        
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const stepLabel = document.getElementById('step-label');
+        const membershipForm = document.getElementById('membershipForm');
+
+        const stepTitles = [
+            "Step 01: Personal Wellness Profile",
+            "Step 02: Lifestyle & Goals",
+            "Step 03: Referral Source"
+        ];
+
+        function updateStepUI() {
+            // Update step content visibility
+            document.querySelectorAll('.step-content').forEach((step, index) => {
+                if (index + 1 === currentStep) {
+                    step.classList.remove('hidden');
+                } else {
+                    step.classList.add('hidden');
+                }
+            });
+
+            // Update markers
+            for (let i = 1; i <= totalSteps; i++) {
+                const marker = document.getElementById(`step-marker-${i}`);
+                if (i <= currentStep) {
+                    marker.className = 'step-indicator-active';
+                } else {
+                    marker.className = 'step-indicator-inactive';
+                }
+            }
+
+            // Update Label
+            stepLabel.innerText = stepTitles[currentStep - 1];
+
+            // Update Buttons
+            if (currentStep === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (currentStep === totalSteps) {
+                nextBtn.innerHTML = `Submit Application <span class="material-symbols-outlined text-[18px]">task_alt</span>`;
+            } else {
+                nextBtn.innerHTML = `Continue <span class="material-symbols-outlined text-[18px]">arrow_forward</span>`;
+            }
+        }
+
+        function validateStep(step) {
+            if (step === 1) {
+                const name = document.getElementById('joinName').value.trim();
+                const email = document.getElementById('joinEmail').value.trim();
+                const residence = document.getElementById('joinResidence').value.trim();
+                if (!name || !email || !residence) {
+                    alert("Please fill in name, email, and residence.");
+                    return false;
+                }
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+                return true;
+            }
+            if (step === 3) {
+                const agree = document.getElementById('joinAgree').checked;
+                if (!agree) {
+                    alert("You must agree to the luxury wellness charter.");
+                    return false;
+                }
+                return true;
+            }
+            return true;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (!validateStep(currentStep)) {
+                return;
+            }
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateStepUI();
+                window.scrollTo({ top: 100, behavior: 'smooth' });
+            } else {
+                // Form Submit
+                const btn = nextBtn;
+                btn.innerHTML = `<span class="material-symbols-outlined animate-spin">refresh</span> Processing...`;
+                btn.disabled = true;
+
+                // Gather inputs
+                const interests = Array.from(document.querySelectorAll('.interest-checkbox:checked')).map(cb => cb.value);
+                const level = document.querySelector('input[name="level"]:checked')?.value || 'Weight Loss';
+
+                const formData = {
+                    name: document.getElementById('joinName').value.trim(),
+                    email: document.getElementById('joinEmail').value.trim(),
+                    residence: document.getElementById('joinResidence').value.trim(),
+                    level: level,
+                    wellness_objective: document.getElementById('joinObjective').value.trim(),
+                    interests: interests,
+                    referral_source: document.getElementById('joinReferral').value.trim()
+                };
+
+                fetch('/api/applications', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error('Submission failed');
+                    return res.json();
+                })
+                .then(data => {
+                    alert("Application Submitted Successfully. Our committee will contact you within 48 hours.");
+                    membershipForm.reset();
+                    currentStep = 1;
+                    updateStepUI();
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("Error submitting application. Please try again.");
+                })
+                .finally(() => {
+                    btn.innerHTML = `Submit Application <span class="material-symbols-outlined text-[18px]">task_alt</span>`;
+                    btn.disabled = false;
+                });
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStepUI();
+                window.scrollTo({ top: 100, behavior: 'smooth' });
+            }
+        });
+
+        // Micro-interaction: Input focus highlight
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                const label = el.parentElement.querySelector('label');
+                if (label) {
+                    label.classList.replace('text-on-surface-variant', 'text-primary');
+                }
+            });
+            el.addEventListener('blur', () => {
+                const label = el.parentElement.querySelector('label');
+                if (label) {
+                    label.classList.replace('text-primary', 'text-on-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>

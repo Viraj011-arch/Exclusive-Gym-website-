@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Membership &amp; Pricing | Muscle House Fitness Club</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#e7bdb2",
+                        "surface-container-lowest": "#0c0f0f",
+                        "inverse-on-surface": "#2f3131",
+                        "error-container": "#93000a",
+                        "primary": "#ffb5a0",
+                        "surface-tint": "#ffb5a0",
+                        "background": "#121414",
+                        "tertiary": "#c8c6c5",
+                        "secondary": "#ffffff",
+                        "primary-container": "#ff5625",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#191e00",
+                        "on-primary-fixed-variant": "#872000",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#b12d00",
+                        "tertiary-container": "#929090",
+                        "secondary-fixed-dim": "#b8d300",
+                        "surface-container-high": "#282a2b",
+                        "on-secondary-container": "#5d6b00",
+                        "on-background": "#e2e2e2",
+                        "on-error": "#690005",
+                        "outline-variant": "#5d4038",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-container": "#541100",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-bright": "#38393a",
+                        "on-tertiary-container": "#2a2a29",
+                        "on-surface": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#3b0900",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary": "#313030",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "on-secondary-fixed-variant": "#414c00",
+                        "surface-dim": "#121414",
+                        "surface": "#121414",
+                        "surface-container-low": "#1a1c1c",
+                        "primary-fixed": "#ffdbd1",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "outline": "#ad887e",
+                        "secondary-fixed": "#d2f000",
+                        "surface-variant": "#333535",
+                        "secondary-container": "#d2f000",
+                        "surface-container": "#1e2020",
+                        "on-secondary": "#2c3400",
+                        "inverse-surface": "#e2e2e2",
+                        "on-primary": "#601400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "section-gap": "80px",
+                        "base": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Oswald"],
+                        "headline-md": ["Oswald"],
+                        "headline-lg-mobile": ["Oswald"],
+                        "display-lg": ["Oswald"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "display-lg": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-primary:hover {
+            box-shadow: 0 0 20px rgba(255, 181, 160, 0.4);
+        }
+        .skew-btn {
+            transform: skew(-10deg);
+        }
+        .skew-btn > * {
+            transform: skew(10deg);
+        }
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .steam-vault {
+            backdrop-filter: blur(40px);
+            animation: pulse-steam 4s infinite ease-in-out;
+        }
+        @keyframes pulse-steam {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-[20px] dark:bg-surface/60 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-center w-full px-container-padding py-4 max-w-[1440px] mx-auto">
+<a href="index.html" class="text-headline-md font-headline-md font-bold uppercase tracking-tighter text-on-surface dark:text-on-surface hover:text-primary transition-colors">
+                Muscle House
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-body-md text-body-md" href="services.html">Services</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="membership.html">Membership</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-body-md text-body-md" href="about.html">About</a>
+</div>
+<a href="join.html" class="skew-btn bg-primary-container px-6 py-2 text-on-primary-container font-label-caps text-label-caps uppercase font-bold hover:glow-primary hover:scale-105 transition-all active:scale-95 duration-150 ease-in-out inline-block text-center">
+<span>Join Now</span>
+</a>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale opacity-40" data-alt="A powerful high-contrast cinematic shot of a modern industrial gym interior. The atmosphere is moody with dramatic shadows and sharp highlights hitting steel gym equipment. Deep oranges and dark greys dominate the palette, creating an aggressive and motivating aesthetic consistent with the premium Muscle House brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyXhu43cKAt-0JOPdBqoP3g9SpymuGh-mukFJ1I3DobLQ-TgMyQ6_VgitPLe5yi5TiYlw4-0oSv_SJnZXUGjyuwzXp2e17OlpFWEhUe2iwkQhb_GXOCkGCTJNwWoy5tqQHY8SspUZegh0M5y6Kl0BR8rsP2fABL0sT_3cpi1OoyAaxAsm-S57WzQdMy3xSDN3PHj7lj4e1w9mJQ71irCXfoUnh5HRqiiYCzk-p_SS_UYq35_-eD5ikPWDoMb2k__CvDlnEM5479Ec"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-container-padding">
+<h1 class="font-display-lg text-display-lg uppercase tracking-tighter mb-4 md:text-display-lg text-headline-lg-mobile">
+                    Choose Your <span class="text-primary">Power</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Invest in your transformation. Premium facilities, professional coaching, and an environment designed for peak performance.
+                </p>
+</div>
+</section>
+<!-- Pricing Tiers -->
+<section class="py-section-gap px-container-padding max-w-[1440px] mx-auto -mt-20 relative z-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Monthly Plan -->
+<div class="glass-card p-10 flex flex-col items-start group hover:border-primary/50 transition-all duration-500">
+<span class="font-label-caps text-label-caps text-primary mb-4">BEGINNER STRENGTH</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Monthly</h3>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="font-display-lg text-headline-md text-primary">$59</span>
+<span class="text-on-surface-variant font-body-md">/mo</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-on-surface-variant">Full Gym Access</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-on-surface-variant">Locker Room Access</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-[20px]">block</span>
+<span class="font-body-md text-on-surface-variant/40 line-through">Steam Bath Access</span>
+</li>
+</ul>
+<button class="w-full skew-btn border-2 border-white/20 py-4 font-label-caps text-label-caps uppercase font-bold hover:bg-white hover:text-black transition-all subscribe-btn" data-plan="Monthly" data-cost="59">
+<span>Sign Up</span>
+</button>
+</div>
+<!-- Quarterly Plan - Featured -->
+<div class="glass-card p-10 flex flex-col items-start border-primary shadow-[0_0_40px_rgba(255,86,37,0.15)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 bg-primary-container px-4 py-1 skew-x-[-20deg] mr-[-10px] mt-4">
+<span class="font-label-caps text-label-caps text-on-primary-container font-black uppercase">Most Popular</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary mb-4">ADVANCED ATHLETE</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Quarterly</h3>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="font-display-lg text-headline-md text-primary">$149</span>
+<span class="text-on-surface-variant font-body-md">/3 mos</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-on-surface-variant">Full Gym Access</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-on-surface-variant">Steam Bath Access</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-on-surface-variant">Cardio Training Zone</span>
+</li>
+</ul>
+<button class="w-full skew-btn bg-primary-container py-4 text-on-primary-container font-label-caps text-label-caps uppercase font-bold hover:glow-primary hover:scale-[1.02] transition-all subscribe-btn" data-plan="Quarterly" data-cost="149">
+<span>Sign Up</span>
+</button>
+</div>
+<!-- Yearly Plan -->
+<div class="glass-card p-10 flex flex-col items-start group hover:border-primary/50 transition-all duration-500">
+<span class="font-label-caps text-label-caps text-primary mb-4">ELITE WARRIOR</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Yearly</h3>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="font-display-lg text-headline-md text-primary">$499</span>
+<span class="text-on-surface-variant font-body-md">/year</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-on-surface-variant">All Quarterly Benefits</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-on-surface-variant font-bold">Personalized Diet Plans</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-md text-on-surface-variant">2 Guest Passes / Mo</span>
+</li>
+</ul>
+<button class="w-full skew-btn border-2 border-white/20 py-4 font-label-caps text-label-caps uppercase font-bold hover:bg-white hover:text-black transition-all subscribe-btn" data-plan="Yearly" data-cost="499">
+<span>Sign Up</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Feature Comparison (Bento Style) -->
+<section class="py-section-gap px-container-padding max-w-[1440px] mx-auto">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-12 border-l-4 border-primary pl-6">The Vault Experience</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Steam Bath -->
+<div class="md:col-span-2 steam-vault glass-card p-8 rounded-xl overflow-hidden min-h-[300px] flex flex-col justify-end relative">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-primary mb-2 block">AMENITY</span>
+<h4 class="font-headline-md text-headline-md uppercase mb-2">Steam Bath Access</h4>
+<p class="font-body-md text-on-surface-variant max-w-sm">Recover faster with our state-of-the-art steam facilities, designed to detoxify and relax after peak exertion.</p>
+</div>
+</div>
+<!-- Cardio -->
+<div class="glass-card p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<div>
+<h4 class="font-headline-md text-headline-md uppercase text-[24px] mb-2 leading-tight">Cardio Training</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Advanced treadmills and elliptical systems with integrated performance tracking.</p>
+</div>
+</div>
+<!-- Diet Plans -->
+<div class="glass-card p-8 flex flex-col justify-between bg-primary-container/10">
+<span class="material-symbols-outlined text-primary text-[40px]">restaurant</span>
+<div>
+<h4 class="font-headline-md text-headline-md uppercase text-[24px] mb-2 leading-tight">Diet Plans</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Fuel your growth with science-backed nutritional protocols from our pros.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA & Contact Section -->
+<section class="py-section-gap px-container-padding">
+<div class="max-w-[1440px] mx-auto glass-card p-12 md:p-20 relative overflow-hidden border-2 border-primary/20">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[200px]">support_agent</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-display-lg text-headline-lg uppercase mb-6 leading-none">Need a <span class="text-primary">Personal</span> Assessment?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                            Not sure which plan fits your goals? Talk to our trainers. We offer free initial consultations for new members.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="skew-btn bg-white px-8 py-4 text-black font-label-caps text-label-caps uppercase font-black flex items-center justify-center gap-2 hover:scale-105 transition-all" href="https://wa.link" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp Us</span>
+</a>
+<div class="flex items-center gap-4 px-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant">CALL FOR APPOINTMENT</p>
+<p class="text-headline-md font-headline-md text-on-surface">087964 77257</p>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden md:block h-[400px] rounded-lg overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover grayscale" data-alt="A focused close-up of a professional personal trainer guiding an athlete during a heavy lifting session. The lighting is low-key with intense orange rim light highlighting muscle definition. The image captures the sweat, grit, and intensity of the Muscle House environment, maintaining the premium high-contrast digital-industrial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJZq_F5Rlr845PyuiL8FbeRNuzlHbaK6sOTO86KRQgPFEDTgFYuvIq6DcDBvNV7w-qiGXFTaKwWLswoBVPDjTRWlCLWQ0CVf45CqcHeQfZHZzj4Hakqe_mt2a6pI354EueJpiRPHA83b2kJR-_RYKTibs3hh6FIS2EOTO59CAVaB-_CbneiIN1giuUOYa2n0DoFwoEvTvhDXVU_fmE7XDbqq-z8kUrsWLCxHtJzDEJZqNy-k0qb__jIsHpSRYlcOuSkQc9SgPlyLU"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest dark:bg-surface-container-lowest border-t-4 border-primary mt-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-container-padding max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-headline-md font-headline-md font-black text-on-surface dark:text-on-surface">MUSCLE HOUSE</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-xs">The premier destination for serious athletes. Excellence is not an option, it's our standard.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-label-caps font-label-caps text-primary uppercase">Connect</h5>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary decoration-2 text-body-md font-body-md" href="#">Facebook</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary decoration-2 text-body-md font-body-md" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary decoration-2 text-body-md font-body-md" href="#">Twitter</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-label-caps font-label-caps text-primary uppercase">Location</h5>
+<p class="text-on-surface-variant text-body-md font-body-md">Apt, 3rd Floor, Khalate Niwas, Pune</p>
+<p class="text-on-surface-variant text-body-md font-body-md">087964 77257</p>
+</div>
+</div>
+<div class="mt-20 px-container-padding max-w-[1440px] mx-auto border-t border-white/5 pt-8 text-center md:text-left">
+<p class="text-label-caps font-label-caps text-on-surface-variant opacity-50 uppercase tracking-[0.2em]">© 2024 Muscle House Fitness Club. #Eat #Sleep #Muscle House</p>
+</div>
+</footer>
+
+<!-- Subscription Modal -->
+<div id="subscriptionModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div class="glass-card w-full max-w-[500px] p-10 rounded-xl relative border border-white/10 m-4 shadow-2xl">
+        <button id="closeSubscriptionModal" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+            <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+        <span class="font-label-caps text-label-caps text-primary mb-2 block tracking-widest uppercase">MUSCLE HOUSE VAULT</span>
+        <h3 class="font-headline-lg text-headline-lg uppercase mb-2 text-primary" id="modalPlanTitle">Membership</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6">Enter your credentials to register your membership and initialize access protocols.</p>
+        <form id="subscriptionForm" class="space-y-6">
+            <input type="hidden" id="subPlanName" name="plan_name" value="">
+            <input type="hidden" id="subPlanCost" name="cost" value="">
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase block">Full Legal Name</label>
+                <input type="text" id="subName" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="ALEXANDER VANCE">
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase block">Email Address</label>
+                <input type="email" id="subEmail" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="AV@ELITE.CO">
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase block">Phone Number</label>
+                <input type="tel" id="subPhone" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="+91 98765 43210">
+            </div>
+            <button type="submit" id="submitSubBtn" class="w-full mt-6 bg-primary-container text-on-primary-container py-4 font-label-caps text-label-caps uppercase tracking-widest font-bold hover:glow-primary hover:scale-[1.02] transition-all duration-150 skew-btn">
+                <span>Confirm Subscription</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Micro-interactions for button glows
+    document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            btn.style.setProperty('--x', `${x}px`);
+            btn.style.setProperty('--y', `${y}px`);
+        });
+    });
+
+    // Simple scroll reveal
+    const observerOptions = {
+        threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.glass-card').forEach(el => {
+        el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+        observer.observe(el);
+    });
+
+    // Subscription Modal logic
+    const subscriptionModal = document.getElementById('subscriptionModal');
+    const subscriptionForm = document.getElementById('subscriptionForm');
+    const closeSubscriptionModal = document.getElementById('closeSubscriptionModal');
+    const subscribeBtns = document.querySelectorAll('.subscribe-btn');
+
+    function openSubModal(plan, cost) {
+        document.getElementById('subPlanName').value = plan;
+        document.getElementById('subPlanCost').value = cost;
+        document.getElementById('modalPlanTitle').innerText = `${plan} Plan ($${cost})`;
+        subscriptionModal.classList.remove('hidden');
+        setTimeout(() => {
+            subscriptionModal.classList.remove('opacity-0');
+        }, 10);
+    }
+
+    function closeSubModal() {
+        subscriptionModal.classList.add('opacity-0');
+        setTimeout(() => {
+            subscriptionModal.classList.add('hidden');
+        }, 300);
+    }
+
+    subscribeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const plan = btn.getAttribute('data-plan');
+            const cost = btn.getAttribute('data-cost');
+            openSubModal(plan, cost);
+        });
+    });
+
+    closeSubscriptionModal.addEventListener('click', closeSubModal);
+    subscriptionModal.addEventListener('click', (e) => {
+        if (e.target === subscriptionModal) closeSubModal();
+    });
+
+        subscriptionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitSubBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Processing...</span>';
+
+            const payload = {
+                name: document.getElementById('subName').value.trim(),
+                email: document.getElementById('subEmail').value.trim(),
+                phone: document.getElementById('subPhone').value.trim(),
+                plan_name: document.getElementById('subPlanName').value,
+                cost: parseFloat(document.getElementById('subPlanCost').value)
+            };
+
+            fetch('/api/subscriptions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('Subscription failed');
+                return res.json();
+            })
+            .then(data => {
+                alert(`Welcome to Muscle House! Your ${payload.plan_name} subscription has been registered.`);
+                subscriptionForm.reset();
+                closeSubModal();
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Error processing subscription. Please try again.');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Confirm Subscription</span>';
+            });
+        });
+    </script>
+</body></html>

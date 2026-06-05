@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Muscle House Vault | Admin Control Panel</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@600;700;900&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet"/>
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-surface-variant": "#e7bdb2",
+              "surface-container-lowest": "#0c0f0f",
+              "inverse-on-surface": "#2f3131",
+              "error-container": "#93000a",
+              "primary": "#ffb5a0",
+              "surface-tint": "#ffb5a0",
+              "background": "#121414",
+              "tertiary": "#c8c6c5",
+              "secondary": "#ffffff",
+              "primary-container": "#ff5625",
+              "tertiary-fixed": "#e5e2e1",
+              "on-secondary-fixed": "#191e00",
+              "on-primary-fixed-variant": "#872000",
+              "error": "#ffb4ab",
+              "inverse-primary": "#b12d00",
+              "tertiary-container": "#929090",
+              "secondary-fixed-dim": "#b8d300",
+              "surface-container-high": "#282a2b",
+              "on-secondary-container": "#5d6b00",
+              "on-background": "#e2e2e2",
+              "on-error": "#690005",
+              "outline-variant": "#5d4038",
+              "tertiary-fixed-dim": "#c8c6c5",
+              "on-primary-container": "#541100",
+              "on-tertiary-fixed": "#1c1b1b",
+              "surface-bright": "#38393a",
+              "on-tertiary-container": "#2a2a29",
+              "on-surface": "#e2e2e2",
+              "on-error-container": "#ffdad6",
+              "on-primary-fixed": "#3b0900",
+              "surface-container-highest": "#333535",
+              "on-tertiary": "#313030",
+              "primary-fixed-dim": "#ffb5a0",
+              "on-secondary-fixed-variant": "#414c00",
+              "surface-dim": "#121414",
+              "surface": "#121414",
+              "surface-container-low": "#1a1c1c",
+              "primary-fixed": "#ffdbd1",
+              "on-tertiary-fixed-variant": "#474646",
+              "outline": "#ad887e",
+              "secondary-fixed": "#d2f000",
+              "surface-variant": "#333535",
+              "secondary-container": "#d2f000",
+              "surface-container": "#1e2020",
+              "on-secondary": "#2c3400",
+              "inverse-surface": "#e2e2e2",
+              "on-primary": "#601400"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem"
+            },
+            "spacing": {
+              "container-padding": "24px",
+              "section-gap": "80px",
+              "base": "8px",
+              "gutter": "16px"
+            },
+            "fontFamily": {
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Oswald"],
+              "headline-md": ["Oswald"],
+              "headline-lg-mobile": ["Oswald"],
+              "display-lg": ["Oswald"],
+              "label-caps": ["JetBrains Mono"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(255, 86, 37, 0.15);
+        }
+        .skew-btn { transform: skew(-10deg); }
+        .skew-btn > * { transform: skew(10deg); }
+        .tab-active {
+            border-bottom: 2px solid #ffb5a0;
+            color: #ffb5a0;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #5d4038;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-white font-body-md overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="sticky top-0 w-full z-40 bg-surface/80 backdrop-blur-md border-b border-white/5">
+        <nav class="flex justify-between items-center w-full px-container-padding py-4 max-w-[1440px] mx-auto">
+            <a href="index.html" class="text-headline-md font-headline-md font-bold uppercase tracking-tighter text-on-surface hover:text-primary transition-colors flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">admin_panel_settings</span>
+                Muscle House Vault
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-on-surface-variant hover:text-on-surface transition-all text-label-caps font-label-caps">Public Site</a>
+                <span class="bg-primary/10 text-primary px-3 py-1 font-label-caps text-[10px] uppercase border border-primary/20 rounded-full">Secure Session</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-[1440px] w-full mx-auto px-container-padding py-8 space-y-8">
+        
+        <!-- Welcome banner -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <h1 class="font-headline-lg text-headline-lg uppercase italic tracking-tight">System control dashboard</h1>
+                <p class="text-on-surface-variant text-body-lg">Manage membership applications, check subscription tallies, and monitor gym bookings.</p>
+            </div>
+            <button onclick="fetchSummary()" class="skew-btn bg-primary-container text-on-primary-container px-6 py-3 font-label-caps text-label-caps hover:glow-primary flex items-center justify-center gap-2 max-w-[180px]">
+                <span>Refresh Data</span>
+                <span class="material-symbols-outlined text-sm">refresh</span>
+            </button>
+        </div>
+
+        <!-- Metrics Bento Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Metric Card 1 -->
+            <div class="glass-card rounded-xl p-6 flex items-center justify-between">
+                <div class="space-y-1">
+                    <span class="text-on-surface-variant text-label-caps font-label-caps uppercase block">Total Applications</span>
+                    <span id="stat-total-apps" class="font-headline-lg text-4xl block text-white font-bold">0</span>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-3xl">folder_shared</span>
+                </div>
+            </div>
+            <!-- Metric Card 2 -->
+            <div class="glass-card rounded-xl p-6 flex items-center justify-between">
+                <div class="space-y-1">
+                    <span class="text-on-surface-variant text-label-caps font-label-caps uppercase block">Pending Review</span>
+                    <span id="stat-pending-apps" class="font-headline-lg text-4xl block text-primary-container font-bold">0</span>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+                    <span class="material-symbols-outlined text-3xl">pending_actions</span>
+                </div>
+            </div>
+            <!-- Metric Card 3 -->
+            <div class="glass-card rounded-xl p-6 flex items-center justify-between">
+                <div class="space-y-1">
+                    <span class="text-on-surface-variant text-label-caps font-label-caps uppercase block">Active Subscriptions</span>
+                    <span id="stat-active-subs" class="font-headline-lg text-4xl block text-white font-bold">0</span>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-3xl">card_membership</span>
+                </div>
+            </div>
+            <!-- Metric Card 4 -->
+            <div class="glass-card rounded-xl p-6 flex items-center justify-between">
+                <div class="space-y-1">
+                    <span class="text-on-surface-variant text-label-caps font-label-caps uppercase block">Estimated Revenue</span>
+                    <span id="stat-revenue" class="font-headline-lg text-4xl block text-primary font-bold">$0</span>
+                </div>
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-3xl">monetization_on</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Management Tabs -->
+        <div class="glass-card rounded-xl overflow-hidden border border-white/5">
+            <!-- Tabs Header -->
+            <div class="bg-surface-container-low px-6 border-b border-white/5 flex gap-6 overflow-x-auto">
+                <button onclick="switchTab('applications')" id="tab-btn-applications" class="py-4 font-headline-md text-headline-md tracking-wider uppercase focus:outline-none transition-all tab-active">
+                    Applications
+                </button>
+                <button onclick="switchTab('subscriptions')" id="tab-btn-subscriptions" class="py-4 font-headline-md text-headline-md tracking-wider uppercase focus:outline-none transition-all text-on-surface-variant hover:text-white">
+                    Subscriptions
+                </button>
+                <button onclick="switchTab('consultations')" id="tab-btn-consultations" class="py-4 font-headline-md text-headline-md tracking-wider uppercase focus:outline-none transition-all text-on-surface-variant hover:text-white">
+                    Consultations
+                </button>
+            </div>
+
+            <!-- Tab Content: Applications -->
+            <div id="tab-content-applications" class="p-6 overflow-x-auto custom-scrollbar">
+                <table class="w-full text-left border-collapse min-w-[800px]">
+                    <thead>
+                        <tr class="border-b border-white/5 text-on-surface-variant text-label-caps font-label-caps uppercase text-xs">
+                            <th class="pb-3 font-semibold">Date</th>
+                            <th class="pb-3 font-semibold">Full Name</th>
+                            <th class="pb-3 font-semibold">Email</th>
+                            <th class="pb-3 font-semibold">Residence</th>
+                            <th class="pb-3 font-semibold">Goal</th>
+                            <th class="pb-3 font-semibold">Interests</th>
+                            <th class="pb-3 font-semibold text-center">Status</th>
+                            <th class="pb-3 font-semibold text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applications-tbody" class="divide-y divide-white/5 font-body-md text-sm text-on-surface-variant">
+                        <!-- Rows injected dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tab Content: Subscriptions -->
+            <div id="tab-content-subscriptions" class="p-6 hidden overflow-x-auto custom-scrollbar">
+                <table class="w-full text-left border-collapse min-w-[800px]">
+                    <thead>
+                        <tr class="border-b border-white/5 text-on-surface-variant text-label-caps font-label-caps uppercase text-xs">
+                            <th class="pb-3 font-semibold">Date</th>
+                            <th class="pb-3 font-semibold">Name</th>
+                            <th class="pb-3 font-semibold">Contact</th>
+                            <th class="pb-3 font-semibold">Tier Plan</th>
+                            <th class="pb-3 font-semibold">Revenue Cost</th>
+                            <th class="pb-3 font-semibold text-center">Status</th>
+                            <th class="pb-3 font-semibold text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscriptions-tbody" class="divide-y divide-white/5 font-body-md text-sm text-on-surface-variant">
+                        <!-- Rows injected dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tab Content: Consultations -->
+            <div id="tab-content-consultations" class="p-6 hidden overflow-x-auto custom-scrollbar">
+                <table class="w-full text-left border-collapse min-w-[600px]">
+                    <thead>
+                        <tr class="border-b border-white/5 text-on-surface-variant text-label-caps font-label-caps uppercase text-xs">
+                            <th class="pb-3 font-semibold">Date</th>
+                            <th class="pb-3 font-semibold">Name</th>
+                            <th class="pb-3 font-semibold">Contact Details</th>
+                            <th class="pb-3 font-semibold">Booking Type</th>
+                            <th class="pb-3 font-semibold text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="consultations-tbody" class="divide-y divide-white/5 font-body-md text-sm text-on-surface-variant">
+                        <!-- Rows injected dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 bg-surface-container-lowest border-t border-white/5 mt-auto text-center text-xs text-on-surface-variant opacity-60">
+        <p>© 2024 Muscle House Fitness Club Admin Vault. #Eat #Sleep #Muscle House</p>
+    </footer>
+
+    <!-- Scripting Dashboard Interactions -->
+    <script>
+        let dashboardData = {
+            stats: { totalApplications: 0, pendingApplications: 0, activeSubscriptions: 0, totalRevenue: 0, totalConsultations: 0 },
+            applications: [],
+            subscriptions: [],
+            consultations: []
+        };
+
+        // Tab selection management
+        function switchTab(tabName) {
+            const tabs = ['applications', 'subscriptions', 'consultations'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-btn-${t}`);
+                const content = document.getElementById(`tab-content-${t}`);
+                if (t === tabName) {
+                    btn.className = "py-4 font-headline-md text-headline-md tracking-wider uppercase focus:outline-none transition-all tab-active";
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = "py-4 font-headline-md text-headline-md tracking-wider uppercase focus:outline-none transition-all text-on-surface-variant hover:text-white";
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        // Fetch all data from backend Express route
+        function fetchSummary() {
+            fetch('/api/admin/summary')
+                .then(res => res.json())
+                .then(data => {
+                    dashboardData = data;
+                    renderStats();
+                    renderApplications();
+                    renderSubscriptions();
+                    renderConsultations();
+                })
+                .catch(err => {
+                    console.error('Error fetching dashboard summary:', err);
+                    alert('Error loading summary database.');
+                });
+        }
+
+        function renderStats() {
+            document.getElementById('stat-total-apps').innerText = dashboardData.stats.totalApplications;
+            document.getElementById('stat-pending-apps').innerText = dashboardData.stats.pendingApplications;
+            document.getElementById('stat-active-subs').innerText = dashboardData.stats.activeSubscriptions;
+            document.getElementById('stat-revenue').innerText = `$${dashboardData.stats.totalRevenue}`;
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return 'N/A';
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        }
+
+        function renderApplications() {
+            const tbody = document.getElementById('applications-tbody');
+            if (dashboardData.applications.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="py-8 text-center text-on-surface-variant/40 uppercase font-label-caps">No applications stored.</td></tr>`;
+                return;
+            }
+            tbody.innerHTML = dashboardData.applications.map(app => {
+                let statusClass = 'text-primary/70 bg-primary/5 border-primary/20';
+                if (app.status === 'Approved') statusClass = 'text-green-400 bg-green-500/5 border-green-500/20';
+                if (app.status === 'Rejected') statusClass = 'text-red-400 bg-red-500/5 border-red-500/20';
+
+                return `
+                    <tr class="hover:bg-white/[0.01] transition-colors">
+                        <td class="py-4 pr-3 whitespace-nowrap">${formatDate(app.created_at)}</td>
+                        <td class="py-4 pr-3 font-semibold text-white uppercase">${app.name}</td>
+                        <td class="py-4 pr-3 whitespace-nowrap">${app.email}</td>
+                        <td class="py-4 pr-3 whitespace-nowrap uppercase">${app.residence}</td>
+                        <td class="py-4 pr-3 whitespace-nowrap uppercase">${app.level}</td>
+                        <td class="py-4 pr-3 max-w-[200px] truncate" title="${app.interests || 'None'}">${app.interests || 'None'}</td>
+                        <td class="py-4 text-center">
+                            <span class="inline-block px-2.5 py-0.5 rounded-full border text-[11px] font-semibold tracking-wider uppercase ${statusClass}">
+                                ${app.status}
+                            </span>
+                        </td>
+                        <td class="py-4 text-right space-x-1 whitespace-nowrap">
+                            ${app.status === 'Pending' ? `
+                                <button onclick="updateAppStatus(${app.id}, 'Approved')" class="px-2 py-1 bg-green-500/20 border border-green-500/40 text-green-400 hover:bg-green-500 hover:text-black rounded text-[11px] font-semibold transition-all">Approve</button>
+                                <button onclick="updateAppStatus(${app.id}, 'Rejected')" class="px-2 py-1 bg-red-500/20 border border-red-500/40 text-red-400 hover:bg-red-500 hover:text-black rounded text-[11px] font-semibold transition-all">Reject</button>
+                            ` : ''}
+                            <button onclick="deleteEntry('applications', ${app.id})" class="px-2 py-1 bg-white/5 border border-white/10 text-on-surface-variant hover:border-red-500/50 hover:text-red-400 rounded text-[11px] transition-all">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderSubscriptions() {
+            const tbody = document.getElementById('subscriptions-tbody');
+            if (dashboardData.subscriptions.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-on-surface-variant/40 uppercase font-label-caps">No subscription records.</td></tr>`;
+                return;
+            }
+            tbody.innerHTML = dashboardData.subscriptions.map(sub => {
+                return `
+                    <tr class="hover:bg-white/[0.01] transition-colors">
+                        <td class="py-4 pr-3 whitespace-nowrap">${formatDate(sub.created_at)}</td>
+                        <td class="py-4 pr-3 font-semibold text-white uppercase">${sub.name}</td>
+                        <td class="py-4 pr-3 whitespace-nowrap uppercase">${sub.email}<br/><span class="text-xs text-on-surface-variant/60 font-mono">${sub.phone}</span></td>
+                        <td class="py-4 pr-3 whitespace-nowrap uppercase text-primary font-semibold">${sub.plan_name}</td>
+                        <td class="py-4 pr-3 font-semibold text-white font-mono">$${sub.cost}</td>
+                        <td class="py-4 text-center">
+                            <span class="inline-block px-2.5 py-0.5 rounded-full border border-green-500/20 text-green-400 bg-green-500/5 text-[11px] font-semibold tracking-wider uppercase">
+                                ${sub.status}
+                            </span>
+                        </td>
+                        <td class="py-4 text-right">
+                            <button onclick="deleteEntry('subscriptions', ${sub.id})" class="px-2 py-1 bg-white/5 border border-white/10 text-on-surface-variant hover:border-red-500/50 hover:text-red-400 rounded text-[11px] transition-all">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderConsultations() {
+            const tbody = document.getElementById('consultations-tbody');
+            if (dashboardData.consultations.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="py-8 text-center text-on-surface-variant/40 uppercase font-label-caps">No booking records.</td></tr>`;
+                return;
+            }
+            tbody.innerHTML = dashboardData.consultations.map(c => {
+                return `
+                    <tr class="hover:bg-white/[0.01] transition-colors">
+                        <td class="py-4 pr-3 whitespace-nowrap">${formatDate(c.created_at)}</td>
+                        <td class="py-4 pr-3 font-semibold text-white uppercase">${c.name}</td>
+                        <td class="py-4 pr-3 whitespace-nowrap">${c.email}<br/><span class="text-xs text-on-surface-variant/60 font-mono">${c.phone}</span></td>
+                        <td class="py-4 pr-3 uppercase text-primary font-semibold">${c.type}</td>
+                        <td class="py-4 text-right">
+                            <button onclick="deleteEntry('consultations', ${c.id})" class="px-2 py-1 bg-white/5 border border-white/10 text-on-surface-variant hover:border-red-500/50 hover:text-red-400 rounded text-[11px] transition-all">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Action: Approve or Reject Application
+        function updateAppStatus(id, status) {
+            fetch(`/api/applications/${id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status })
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('Status update failed');
+                return res.json();
+            })
+            .then(data => {
+                fetchSummary();
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Failed to update application status.');
+            });
+        }
+
+        // Action: Delete row entry
+        function deleteEntry(table, id) {
+            if (!confirm('Are you sure you want to permanently delete this record?')) return;
+
+            fetch(`/api/${table}/${id}`, {
+                method: 'DELETE'
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('Deletion failed');
+                return res.json();
+            })
+            .then(data => {
+                fetchSummary();
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Deletion failed.');
+            });
+        }
+
+        // Run summary fetch on page load
+        window.addEventListener('DOMContentLoaded', fetchSummary);
+    </script>
+</body>
+</html>

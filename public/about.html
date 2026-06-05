@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About &amp; Facilities | Muscle House Fitness Club</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Oswald:wght@600;700;900&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#e7bdb2",
+                    "surface-container-lowest": "#0c0f0f",
+                    "inverse-on-surface": "#2f3131",
+                    "error-container": "#93000a",
+                    "primary": "#ffb5a0",
+                    "surface-tint": "#ffb5a0",
+                    "background": "#121414",
+                    "tertiary": "#c8c6c5",
+                    "secondary": "#ffffff",
+                    "primary-container": "#ff5625",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-secondary-fixed": "#191e00",
+                    "on-primary-fixed-variant": "#872000",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#b12d00",
+                    "tertiary-container": "#929090",
+                    "secondary-fixed-dim": "#b8d300",
+                    "surface-container-high": "#282a2b",
+                    "on-secondary-container": "#5d6b00",
+                    "on-background": "#e2e2e2",
+                    "on-error": "#690005",
+                    "outline-variant": "#5d4038",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary-container": "#541100",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "surface-bright": "#38393a",
+                    "on-tertiary-container": "#2a2a29",
+                    "on-surface": "#e2e2e2",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#3b0900",
+                    "surface-container-highest": "#333535",
+                    "on-tertiary": "#313030",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "on-secondary-fixed-variant": "#414c00",
+                    "surface-dim": "#121414",
+                    "surface": "#121414",
+                    "surface-container-low": "#1a1c1c",
+                    "primary-fixed": "#ffdbd1",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "outline": "#ad887e",
+                    "secondary-fixed": "#d2f000",
+                    "surface-variant": "#333535",
+                    "secondary-container": "#d2f000",
+                    "surface-container": "#1e2020",
+                    "on-secondary": "#2c3400",
+                    "inverse-surface": "#e2e2e2",
+                    "on-primary": "#601400"
+            },
+            "borderRadius": {
+                    "DEFAULT": "2px",
+                    "lg": "4px",
+                    "xl": "8px",
+                    "full": "12px"
+            },
+            "spacing": {
+                    "container-padding": "24px",
+                    "section-gap": "80px",
+                    "base": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Oswald"],
+                    "headline-md": ["Oswald"],
+                    "headline-lg-mobile": ["Oswald"],
+                    "display-lg": ["Oswald"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                    "display-lg": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      .glow-primary {
+        box-shadow: 0 0 20px rgba(255, 181, 160, 0.3);
+      }
+      .glass-card {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .steam-vault {
+        backdrop-filter: blur(40px);
+        background: rgba(255, 255, 255, 0.05);
+        animation: steam-pulse 8s infinite ease-in-out;
+      }
+      @keyframes steam-pulse {
+        0%, 100% { opacity: 0.9; }
+        50% { opacity: 0.7; }
+      }
+      .skew-btn {
+        transform: skewX(-12deg);
+      }
+      .skew-btn span {
+        transform: skewX(12deg);
+        display: inline-block;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-[20px] dark:bg-surface/60 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-center w-full px-container-padding py-4 max-w-[1440px] mx-auto">
+<a href="index.html" class="text-headline-md font-headline-md font-bold uppercase tracking-tighter text-on-surface dark:text-on-surface hover:text-primary transition-colors">
+                Muscle House
+</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 text-label-caps font-label-caps" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 text-label-caps font-label-caps" href="membership.html">Membership</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-caps font-label-caps" href="about.html">About</a>
+</div>
+<a href="join.html" class="ml-4 skew-btn bg-primary-container px-6 py-2 hover:glow-primary hover:scale-105 transition-all active:scale-95 duration-150 ease-in-out inline-block text-center">
+<span class="text-on-primary-container font-label-caps uppercase">Join Now</span>
+</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[614px] flex items-end overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A high-intensity, industrial-style gym interior with heavy iron weights and power racks. The atmosphere is moody and cinematic, lit by aggressive orange neon lights that cast deep shadows across a dark concrete floor. The aesthetic is premium and tech-forward, featuring a blend of deep blacks and electric orange accents with a subtle grainy texture for a raw, powerful feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAERHeU_s5fPcFyvYF07lRulfT1QPuccT7bWDwQBewy4o5O9ybPesgAGQsKKOmTdp1NZegf13GF1aWlxfBz7QHokcHzWRnFYR4XC4BNj54DiXreCuYFYh8A3cyIEnJy3VohLNomFyuWxy78Smm1RgWH2VbQM82fbbL7KYv9tIGA68j4fIG-n119us1LzMUDtzPFbZbESHg9brJFgOWMijLAq1bf6X6aNKl4OoyrdNa4K5s3olqumwl-CkrmKCl_Z9ycVryoxWM5BvQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="relative w-full max-w-[1440px] mx-auto px-container-padding pb-section-gap">
+<h1 class="font-display-lg text-display-lg md:text-display-lg uppercase italic leading-[0.9]">
+                More Than Just <br/><span class="text-primary">A Fitness Club</span>
+</h1>
+</div>
+</header>
+<main>
+<!-- History & Mission Bento -->
+<section class="py-section-gap px-container-padding max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 glass-card p-10 flex flex-col justify-end min-h-[400px] relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-weight="fill">workspace_premium</span>
+</div>
+<div class="z-10">
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">5.0 RATING (177+ REVIEWS)</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-6 leading-tight">Our Commitment to <br/>Excellence</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                            At Muscle House Fitness Club (MHFC), we've built a legacy of strength. With a perfect 5.0-star rating across 177+ verified reviews, our mission is to provide an elite training environment that transcends the typical gym experience. We combine industrial grit with luxury amenities.
+                        </p>
+</div>
+</div>
+<div class="md:col-span-4 glass-card p-10 flex flex-col justify-center items-center text-center bg-primary/5 border-primary/20">
+<span class="font-display-lg text-[100px] leading-none text-primary mb-2">177+</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface">Satisfied Members</span>
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">Defining fitness standards in Pune since our inception.</p>
+</div>
+</div>
+</section>
+<!-- The Steam Vault & Facilities -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-container-padding">
+<div class="mb-12">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]">The Experience</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mt-2">World-Class Facilities</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Steam Bath -->
+<div class="steam-vault p-10 min-h-[500px] flex flex-col justify-between border-t-2 border-primary">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">mode_fan</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">The Steam Vault</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Immerse yourself in our atmospheric steam chamber. Engineered for optimal recovery, our steam bath uses high-density mist technology to detoxify and soothe muscle tension after high-intensity sessions.
+                            </p>
+</div>
+<div class="mt-8">
+<span class="inline-block px-3 py-1 bg-primary/20 border border-primary/40 text-primary font-label-caps text-[10px] uppercase">High Humidity Recovery</span>
+</div>
+</div>
+<!-- Cardio Zone -->
+<div class="glass-card p-10 min-h-[500px] flex flex-col justify-between overflow-hidden relative group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-110 transition-transform duration-700" data-alt="A row of high-end, modern treadmills and elliptical machines in a clean, brightly lit cardio zone. The space features large windows and a cool, air-conditioned atmosphere. The lighting is crisp with white and subtle orange glow accents, reflecting off polished glass and metal surfaces, creating a professional and energetic training environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa6sd7j_aYBo6p0WX5gZA5hh7XfPbIIkO3in4UGJROKHAqtdRfDWMhGTegRAlB539unyDlT5AkZS9hKgYN4aNZMQ9tLdcGlDxc-0013kLTePZ-Ur_rZb1AU9WtBeZdeSjIblE7TxDhRO-SYiyr4dpJEgTEkP0VaRkNUPy9ULYwXCzvIChi43skO8ixhEGQt7gh7aQk4kH7k-IBU5tRQvys8jWbfCjB16L33Xhdp116_nS3vXmYALNYjvWD26kXj7486oSQkMj3ZyU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">speed</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Cardio Training</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Accelerate your metabolic rate in our dedicated Cardio Zone. Featuring premium treadmills, ellipticals, and rowers positioned in a high-airflow, temperature-controlled environment.
+                            </p>
+</div>
+<div class="z-10">
+<div class="w-full h-1 bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary w-3/4 shadow-[0_0_10px_#ffb5a0]"></div>
+</div>
+<span class="mt-2 block font-label-caps text-[10px] uppercase text-on-surface-variant">Peak Capacity Tracking</span>
+</div>
+</div>
+<!-- Shower Area -->
+<div class="glass-card p-10 min-h-[500px] flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">shower</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Pristine Showers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Transition from the sweat of the floor to the luxury of our shower suites. We maintain medical-grade hygiene standards with high-pressure hot/cold water systems and premium grooming essentials.
+                            </p>
+</div>
+<div class="flex gap-2">
+<div class="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">cleaning_services</span>
+</div>
+<div class="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">thermostat</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ambiance / AC Section -->
+<section class="relative py-section-gap overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-container-padding grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center">
+<div class="order-2 md:order-1">
+<div class="relative glass-card aspect-square max-w-md mx-auto p-4 rotate-3 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="An expansive view of a modern gym floor at night, featuring a 'Good Ambiance' with soft, localized lighting and blue-ish cool tones from efficient air conditioning systems. The gym equipment is silhouettes against the glow, with hints of orange and white highlighting the premium textures of the facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA18PXYKToTfNKl1VM-HgogVmBwyWUMxLB7qH7VP2WPckxFhZ2K_vQ3jlRixJPPMW0stUta-VrSPIjF8QDrEyjxe3UTRvsWJMt8NcJTsth6QLto-aWAzBuJLMxt6_akjC--RYV2yIhVCWK5tx4WCSXXzHX3pRPBbLflidxRRHfcldtRvM2M01WLAYuO1U4wEYsrB0cQxLGUqv541f0usyhRrcdMukaMbCmM6pbDpIpIDvLSxG6yYSWILPeUQZgLYWBnDecJPdj_Vu4"/>
+<div class="absolute -bottom-6 -right-6 bg-primary p-6 skew-btn glow-primary">
+<span class="text-on-primary-container font-headline-md text-headline-md uppercase italic leading-none">Cooling <br/>System</span>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]">Atmosphere</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mt-2 mb-6 leading-tight">Engineered for <br/>Deep Focus</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        The 'Good Ambiance' at Muscle House isn't accidental. We utilize a medical-grade centralized air-conditioning system that maintains a constant 22°C, ensuring your performance never falters due to heat. Our industrial-chic lighting is tuned to enhance psychological focus and motivation.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Full HVAC Climate Control</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Surround Sound Audio Engineering</span>
+</li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+<span class="font-label-caps text-label-caps uppercase">Acoustic Vibration Dampening</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Location Map Section -->
+<section class="py-section-gap px-container-padding max-w-[1440px] mx-auto">
+<div class="glass-card p-1 flex flex-col md:flex-row overflow-hidden">
+<div class="w-full md:w-1/3 p-10 bg-surface-container-high flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-4">Find Us</span>
+<h2 class="font-headline-md text-headline-md uppercase mb-6">Mokarwadi, Narhe</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        Apt, 3rd Floor, Khalate Niwas, Pune, Maharashtra 411041. <br/><br/>
+                        Centrally located for the fitness community of Narhe. High-speed parking and easy access.
+                    </p>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">call</span>
+<span class="font-label-caps text-label-caps">087964 77257</span>
+</div>
+</div>
+<div class="w-full md:w-2/3 min-h-[400px] relative">
+<!-- Map Placeholder -->
+<div class="w-full h-full bg-surface-container-highest flex items-center justify-center">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="A stylized, high-contrast digital map showing the city layout of Pune, specifically focusing on the Narhe area. The map is designed with a dark, industrial theme featuring neon orange markers and a futuristic tech aesthetic. It highlights landmarks with glowing icons, consistent with the Muscle House brand identity of strength and performance." data-location="Mokarwadi, Pune" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmN8n3IVOplAm4tr7MAX0o7eMdFWpQtCJIcPI7GG2AEPj4t6ufhRLYKwC4hnim5mT4kr1oJAqURETrDOr41j1lhttaEhuOtnTWjNBoLvfX5VarigMWo5EBwL_tMkaBiwUejCggbaDqN2jqU85gvQgOINHVwCPKyvOs1mME4sA4uCCXlKSiE-jDeLIc0E5s6HmDoTgQqd0---4cSam3GHmLSZB2DhSX80zS6H6Gj7L1kUoPcWg8SLujXuCQAnikRtYBeg2tR-e2hrw"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-12 h-12 bg-primary rounded-full animate-ping absolute"></div>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center relative shadow-[0_0_30px_#ffb5a0]">
+<span class="material-symbols-outlined text-on-primary font-bold">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest dark:bg-surface-container-lowest border-t-4 border-primary mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-container-padding max-w-[1440px] mx-auto">
+<div>
+<a href="index.html" class="text-headline-md font-headline-md font-black text-on-surface dark:text-on-surface uppercase mb-6 block hover:text-primary transition-colors">
+                    Muscle House
+                </a>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-xs">
+                    © 2024 Muscle House Fitness Club. #Eat #Sleep #Muscle House
+                </p>
+</div>
+<div>
+<h4 class="text-label-caps font-label-caps text-primary uppercase mb-6">Contact &amp; Location</h4>
+<ul class="space-y-4">
+<li class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer text-body-md font-body-md">Apt, 3rd Floor, Khalate Niwas, Pune</li>
+<li class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer text-body-md font-body-md">087964 77257</li>
+</ul>
+</div>
+<div>
+<h4 class="text-label-caps font-label-caps text-primary uppercase mb-6">Social Pulse</h4>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary decoration-2 transition-colors font-label-caps text-label-caps uppercase" href="#">Facebook</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary decoration-2 transition-colors font-label-caps text-label-caps uppercase" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-primary decoration-2 transition-colors font-label-caps text-label-caps uppercase" href="#">Twitter</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Simple scroll reveal for glass cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card, .steam-vault').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

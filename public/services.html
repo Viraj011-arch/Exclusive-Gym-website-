@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Muscle House Fitness Club</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Oswald:wght@600;700&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#e7bdb2",
+                    "surface-container-lowest": "#0c0f0f",
+                    "inverse-on-surface": "#2f3131",
+                    "error-container": "#93000a",
+                    "primary": "#ffb5a0",
+                    "surface-tint": "#ffb5a0",
+                    "background": "#121414",
+                    "tertiary": "#c8c6c5",
+                    "secondary": "#ffffff",
+                    "primary-container": "#ff5625",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-secondary-fixed": "#191e00",
+                    "on-primary-fixed-variant": "#872000",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#b12d00",
+                    "tertiary-container": "#929090",
+                    "secondary-fixed-dim": "#b8d300",
+                    "surface-container-high": "#282a2b",
+                    "on-secondary-container": "#5d6b00",
+                    "on-background": "#e2e2e2",
+                    "on-error": "#690005",
+                    "outline-variant": "#5d4038",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary-container": "#541100",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "surface-bright": "#38393a",
+                    "on-tertiary-container": "#2a2a29",
+                    "on-surface": "#e2e2e2",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#3b0900",
+                    "surface-container-highest": "#333535",
+                    "on-tertiary": "#313030",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "on-secondary-fixed-variant": "#414c00",
+                    "surface-dim": "#121414",
+                    "surface": "#121414",
+                    "surface-container-low": "#1a1c1c",
+                    "primary-fixed": "#ffdbd1",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "outline": "#ad887e",
+                    "secondary-fixed": "#d2f000",
+                    "surface-variant": "#333535",
+                    "secondary-container": "#d2f000",
+                    "surface-container": "#1e2020",
+                    "on-secondary": "#2c3400",
+                    "inverse-surface": "#e2e2e2",
+                    "on-primary": "#601400"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-padding": "24px",
+                    "section-gap": "80px",
+                    "base": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Oswald"],
+                    "headline-md": ["Oswald"],
+                    "headline-lg-mobile": ["Oswald"],
+                    "display-lg": ["Oswald"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                    "display-lg": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #ffb5a0;
+            box-shadow: 0 0 30px rgba(255, 181, 160, 0.15);
+            transform: translateY(-4px);
+        }
+        .skew-btn {
+            transform: skew(-12deg);
+        }
+        .skew-btn-content {
+            transform: skew(12deg);
+        }
+        .steam-vault {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(40px);
+            animation: pulse-mist 8s infinite ease-in-out;
+        }
+        @keyframes pulse-mist {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; backdrop-filter: blur(50px); }
+        }
+        .glow-primary {
+            box-shadow: 0 0 15px #ffb5a0;
+        }
+        .industrial-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background industrial-bg selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-[20px] border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-center w-full px-container-padding py-4 max-w-[1440px] mx-auto">
+<a class="text-headline-md font-headline-md font-bold uppercase tracking-tighter text-on-surface hover:text-primary transition-colors" href="index.html">
+                Muscle House
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md transition-all" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-body-md text-body-md" href="membership.html">Membership</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-body-md text-body-md" href="about.html">About</a>
+</div>
+<a href="join.html" class="skew-btn bg-primary-container text-on-primary-container px-6 py-2 font-label-caps text-label-caps hover:glow-primary hover:scale-105 transition-all active:scale-95 inline-block text-center">
+<span class="skew-btn-content inline-block">Join Now</span>
+</a>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-container-padding pb-section-gap">
+<!-- Hero Header -->
+<header class="py-section-gap">
+<h1 class="font-display-lg text-display-lg uppercase italic tracking-tighter mb-4 max-md:text-headline-lg-mobile max-md:font-headline-lg-mobile">
+                Engineered for <span class="text-primary-container">Excellence</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Explore our elite training modalities and premium recovery amenities designed to push your physiological limits.
+            </p>
+</header>
+<!-- Bento Grid Services -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Personal Training - Large Feature -->
+<div class="md:col-span-8 md:row-span-2 glass-card overflow-hidden group min-h-[400px] flex flex-col justify-end p-8">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" data-alt="A high-contrast cinematic shot of a professional personal trainer guiding a dedicated athlete through a heavy deadlift in a moody industrial gym setting. The scene is lit with dramatic orange neon accents and cool blue backlighting, creating a sense of intensity and focus. The aesthetic is premium and gritty, reflecting the Muscle House brand's core values of strength and immersive performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXqXsr6-sEaBqvnTTlYn0QtLCwbnFDAd2M0EWKBNmTnAtcOe2_kdxiGRaQUQRljPJUgGOTtGzcd_t0KduEghcP8Lk4eG2jN15H1k0F0Kv8JiGqZgwNKVw5A4e4bWMG3FMHVxEv3Ijs7NXAnXv3TFiv88BVJyZ3hniPANPoTkFMPu3pggXtwPIfAZSlg92UAnHQVM0EH5ZLYlW4PpTrjeEqSM-n8HNO73tu3I1L0z5N5RepFq-fHNJYM7YEHCcaPQYcaMGn--mziGQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="text-label-caps font-label-caps text-primary mb-2 block">Elite Performance</span>
+<h3 class="text-headline-lg font-headline-lg uppercase mb-4 max-md:text-headline-lg-mobile max-md:font-headline-lg-mobile">Personal Training</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 max-w-md">1-on-1 sessions tailored to your biometric data and specific athletic goals. Experience the pinnacle of coaching precision.</p>
+<button id="ptConsultBtn" class="skew-btn bg-primary-container text-on-primary-container px-8 py-3 font-label-caps text-label-caps hover:glow-primary">
+<span class="skew-btn-content inline-block">Get a Consultation</span>
+</button>
+</div>
+</div>
+<!-- CrossFit - Square -->
+<div class="md:col-span-4 glass-card overflow-hidden group flex flex-col p-6">
+<div class="h-48 mb-4 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-all" data-alt="A dynamic action shot of athletes performing functional movements in a high-intensity CrossFit box. Heavy steel equipment, chalk-filled air, and dramatic overhead spotlights emphasize the raw and industrial atmosphere. The color palette features deep blacks and vibrant orange glows, capturing the high-energy and competitive spirit of elite CrossFit training." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWogvxo7gPW-_QzsfRmbQo4ChhxBld7WtkBt2Xq786mUzTo43h66xjlpLb87HVVj4e2P36c0oO0hIfPKH4L5oPNtiwoHjC2fhy7VxMWTCU7wwIU9ITiFgE0CDDSa8ru7t7PY4siAmjWBq9m4NCZq7j49UCN2QvxjMQt3KTBHIpdQgrZ_jmP3hGes2hxB3wQdBaZc1frp4WR3DALY1o3PjDVH96z-6lY8PKkLOa0kcTmveXm4Pvzi9kw8oHzuieagCq1TRnVT7OhqE"/>
+</div>
+<h4 class="text-headline-md font-headline-md uppercase mb-2">Crossfit</h4>
+<p class="text-body-md font-body-md text-on-surface-variant flex-grow">High-intensity functional movements designed for metabolic conditioning and raw power.</p>
+<div class="mt-4 flex items-center justify-between">
+<span class="bg-primary/10 text-primary px-3 py-1 text-label-caps font-label-caps border border-primary/20">High Intensity</span>
+<span class="material-symbols-outlined text-primary" data-icon="fitness_center">fitness_center</span>
+</div>
+</div>
+<!-- Yoga - Square -->
+<div class="md:col-span-4 glass-card overflow-hidden group flex flex-col p-6">
+<div class="h-48 mb-4 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-all" data-alt="A serene yet powerful yoga practitioner in a modern minimalist studio with dark textured walls and soft ambient floor lighting. The atmosphere is calm and focused, with thin lines of electric orange light tracing the edges of the room. The visual style is a blend of Zen-like peace and high-tech sophistication, using deep spatial depth and subtle shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmr5LYBeEP9m14fTaHavE7IT5lyCUvPfo2bGT3QCDcLEfgPd6dvh5bSnOMqzFx4ChiAogv1qa658vfpaEEAGOZ2VA0WO9zT8wQ70AX3l5M19Jva3MaZRueLUAQYgqoGSJ2jrMdp_pVIkQ3ryrhrg9usQshkcLbIUX6XVeGDk_Gjlx0eT8_vPJJPNKeo3iIGhyRwTncm6OjrAykNs68dm0l6-MYGJpuEYZlyNQEj7iOFqQgb_LnoDaoumbEPg2-B0eY5P5HFxY4dIg"/>
+</div>
+<h4 class="text-headline-md font-headline-md uppercase mb-2">Yoga</h4>
+<p class="text-body-md font-body-md text-on-surface-variant flex-grow">Master balance and flexibility through focused flows in our atmospheric zen studio.</p>
+<div class="mt-4">
+<button class="text-primary hover:underline font-label-caps text-label-caps flex items-center gap-2">
+                        View Schedule <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- HIIT - Wide -->
+<div class="md:col-span-6 glass-card group flex p-6 gap-6 items-center">
+<div class="w-1/3 aspect-square overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all" data-alt="A group of athletes engaged in explosive HIIT training, with droplets of sweat illuminated by sharp side-lighting. The background features dark industrial elements and glowing progress bars on wall-mounted screens. The mood is one of extreme effort and momentum, with a color palette dominated by shadows and energetic primary orange accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdEPyo0_y8QnnMjOvVqba3sXhbgpDRj44rdr9TTK0tgacfzoAsArn5djtr2y_QD1p2EAdqqpWxRPlpQxjbtcQ3KLJAhv9pyo_1glzz2JWI9KcX7ZBO4_TTyJ676UlrQoYIU28PcQ0uk71EXsQq5scGrLz72AbIMZ-kniTYfEYhVkWCaTkRSOvRG8EWTIAMmvWOLCFiZAshpIxlNMG8UI0Sv3YqYVYAyQNqLWxes2cANbqUZVCsjkqeObnVugaqeLOVUDworL-DB_I"/>
+</div>
+<div>
+<h4 class="text-headline-md font-headline-md uppercase mb-2">HIIT</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">Burn calories and spike heart rates with our explosive interval circuits.</p>
+<div class="h-1 bg-surface-container-highest w-full rounded-full overflow-hidden">
+<div class="h-full bg-primary-container glow-primary" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Cycling - Vertical -->
+<div class="md:col-span-3 md:row-span-2 glass-card overflow-hidden group flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all" data-alt="Row of high-performance stationary bikes in a darkened cycling studio with pulsing neon lights. The floor reflects the vibrant orange and white lights from the ceiling, creating an immersive, nightclub-like atmosphere for training. The shot is captured from a low angle to emphasize the geometric precision and modern equipment of the Muscle House cycling zone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_idMr6jGh6OIg5xxcoDtF3KL-5uBs5VyzgSRtN437sL4d32VsvRk5hu4IvL-fwlXP2UOs6O6QLXtWepyswztxMq4y6uHCmU6F1ZVmNZ4CvvYPBEsoDfkYKuXU9A2qcKl341lR-tPljhOru0e2ha9WMyEI3DXLZLVRsp2uB-om6PZzJ1KdFWMxre4bYD_m3bmKVISHqueWm4zJ8L_UA83IjvVXKONN-XR1YOKBdcp8kMRFdpS61XJV4zAmJN5ShEPOJX5bhsuzN2A"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary text-on-surface-variant px-2 py-1 text-label-caps font-label-caps rounded-sm">Hot Class</span>
+</div>
+</div>
+<div class="p-6 flex-grow">
+<h4 class="text-headline-md font-headline-md uppercase mb-2">Cycling</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Rhythmic cardio sessions in an immersive sensory environment.</p>
+</div>
+<div class="p-6 border-t border-white/5">
+<button id="cyclingBookBtn" class="w-full border-2 border-primary/40 hover:border-primary text-primary py-2 font-label-caps text-label-caps transition-all">
+                        Book Now
+                    </button>
+</div>
+</div>
+<!-- The Steam Vault - Specialized Component -->
+<div class="md:col-span-3 md:row-span-2 steam-vault group flex flex-col p-6 rounded-xl border border-white/10 relative">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="air">air</span>
+<h4 class="text-headline-md font-headline-md uppercase mb-4">Steam Bath</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Deep detoxification and muscle recovery in our temperature-controlled misty vault.</p>
+<div class="mt-auto">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between text-label-caps font-label-caps">
+<span>Humidity</span>
+<span>95%</span>
+</div>
+<div class="h-1 bg-white/10 w-full">
+<div class="h-full bg-primary" style="width: 95%"></div>
+</div>
+</div>
+</div>
+<!-- Interactive Glow -->
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 blur-[60px] group-hover:bg-primary/40 transition-all"></div>
+</div>
+<!-- Zumba & Dance Fitness -->
+<div class="md:col-span-6 glass-card p-6 flex flex-col md:flex-row gap-6">
+<div class="flex-1">
+<h4 class="text-headline-md font-headline-md uppercase mb-2">Dance Fitness</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">High-energy Zumba and urban dance styles to keep you moving and burning.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant text-label-caps font-label-caps">Zumba</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant text-label-caps font-label-caps">Hip Hop</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant text-label-caps font-label-caps">Cardio Burn</span>
+</div>
+</div>
+<div class="flex-1 min-h-[150px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A vibrant and energetic dance studio with colorful led backlighting. Dancers are captured in motion, blurring slightly to represent movement and energy. The space is modern with polished floors reflecting the ambient purple and orange lights, aligning with the bold high-contrast aesthetic of a premium fitness club like Muscle House." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdaL24S5IshjjgzzyrRoXhgisiL1Dzrwmy0821GPg5vs1O-3YeyCZCzX7WcnLQzyZ3noGTCta26w5PYmKpaVM5FqBgHMTZExaj8y0o4IEKuWiOD-fhM_xkKojCMppNKh66zowq0rNm9hdG7gjay67NVMmsxHsURlueWNjshel8TMscjDQsMZITNFmJZrQQAibrMBOpztNL0BB9yXGNU9AMPmlnGqajPuJdV4q7mPGqGl5Lff7t1qfG-cvlmgdkCP9eEKvxcBIEC6w"/>
+</div>
+</div>
+<!-- Nutrition & Diet Plans -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter mt-section-gap">
+<div class="glass-card p-8 border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="restaurant">restaurant</span>
+<h5 class="text-headline-md font-headline-md uppercase mb-2">Diet Plans</h5>
+<p class="text-body-md font-body-md text-on-surface-variant">Customized macro-nutritional strategies to fuel your specific training volume.</p>
+</div>
+<div class="glass-card p-8 border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="query_stats">query_stats</span>
+<h5 class="text-headline-md font-headline-md uppercase mb-2">Nutrition Consulting</h5>
+<p class="text-body-md font-body-md text-on-surface-variant">Professional guidance on supplementation and metabolic optimization.</p>
+</div>
+<div class="glass-card p-8 border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="shower">shower</span>
+<h5 class="text-headline-md font-headline-md uppercase mb-2">Premium Amenities</h5>
+<p class="text-body-md font-body-md text-on-surface-variant">Luxury shower areas and private locker suites for the ultimate post-workout refresh.</p>
+</div>
+</div>
+</div>
+<!-- Secondary Services Grid (Remaining items) -->
+<div class="mt-gutter grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Adult Sports -->
+<div class="glass-card p-6 flex items-center justify-between group">
+<div>
+<h6 class="text-label-caps font-label-caps text-on-surface-variant mb-1">Competitive</h6>
+<p class="text-body-lg font-body-lg uppercase font-bold">Adult Sports</p>
+</div>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors" data-icon="sports_basketball">sports_basketball</span>
+</div>
+<!-- Weight Training -->
+<div class="glass-card p-6 flex items-center justify-between group">
+<div>
+<h6 class="text-label-caps font-label-caps text-on-surface-variant mb-1">Foundational</h6>
+<p class="text-body-lg font-body-lg uppercase font-bold">Weight Training</p>
+</div>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors" data-icon="weight">weight</span>
+</div>
+<!-- Consultation CTA -->
+<div class="md:col-span-2 glass-card p-6 flex items-center justify-between bg-primary-container/10 border-primary-container/30">
+<p class="text-body-lg font-body-lg text-primary">Ready to optimize your routine?</p>
+<button id="ctaBookBtn" class="skew-btn bg-primary-container text-on-primary-container px-6 py-2 font-label-caps text-label-caps">
+<span class="skew-btn-content inline-block">Book a Class</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest border-t-4 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-container-padding max-w-[1440px] mx-auto">
+<div>
+<a class="text-headline-md font-headline-md font-black text-on-surface block mb-6 hover:text-primary transition-colors" href="index.html">
+                    MUSCLE HOUSE
+                </a>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-xs">
+                    © 2024 Muscle House Fitness Club. #Eat #Sleep #Muscle House
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h6 class="text-label-caps font-label-caps text-primary">Contact Us</h6>
+<p class="text-body-md font-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Apt, 3rd Floor, Khalate Niwas, Pune</p>
+<p class="text-body-md font-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">087964 77257</p>
+</div>
+<div class="flex flex-col gap-4">
+<h6 class="text-label-caps font-label-caps text-primary">Social Channels</h6>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary decoration-2 font-label-caps text-label-caps" href="#">Facebook</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary decoration-2 font-label-caps text-label-caps" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary decoration-2 font-label-caps text-label-caps" href="#">Twitter</a>
+</div>
+</div>
+</div>
+</footer>
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+        <div class="glass-card w-full max-w-[500px] p-10 rounded-xl relative border border-white/10 m-4 shadow-2xl">
+            <button id="closeBookingModal" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-[24px]">close</span>
+            </button>
+            <span class="font-label-caps text-label-caps text-primary mb-2 block tracking-widest uppercase">MUSCLE HOUSE VAULT</span>
+            <h3 class="font-headline-lg text-headline-lg uppercase mb-2 text-primary" id="modalBookingTitle">Book a Tour</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Provide your details to schedule a custom assessment or premium gym tour.</p>
+            <form id="bookingForm" class="space-y-6">
+                <input type="hidden" id="bookingType" name="type" value="General Tour">
+                <div class="space-y-2">
+                    <label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase block">Full Legal Name</label>
+                    <input type="text" id="bookingName" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="ALEXANDER VANCE">
+                </div>
+                <div class="space-y-2">
+                    <label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase block">Email Address</label>
+                    <input type="email" id="bookingEmail" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="AV@ELITE.CO">
+                </div>
+                <div class="space-y-2">
+                    <label class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase block">Phone Number</label>
+                    <input type="tel" id="bookingPhone" required class="w-full bg-surface-container-low border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 px-0 transition-colors uppercase" placeholder="+91 98765 43210">
+                </div>
+                <button type="submit" id="submitBookingBtn" class="w-full mt-6 bg-primary-container text-on-primary-container py-4 font-label-caps text-label-caps uppercase tracking-widest font-bold hover:glow-primary hover:scale-[1.02] transition-all duration-150 skew-btn">
+                    <span>Confirm Booking</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Micro-interaction for Steam Vault pulsing
+        const steamVault = document.querySelector('.steam-vault');
+        if (steamVault) {
+            steamVault.addEventListener('mousemove', (e) => {
+                const rect = steamVault.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                steamVault.style.setProperty('--mouse-x', `${x}px`);
+                steamVault.style.setProperty('--mouse-y', `${y}px`);
+            });
+        }
+
+        // Modal triggers and handlers
+        const bookingModal = document.getElementById('bookingModal');
+        const bookingForm = document.getElementById('bookingForm');
+        const closeBookingModal = document.getElementById('closeBookingModal');
+        const ptConsultBtn = document.getElementById('ptConsultBtn');
+        const cyclingBookBtn = document.getElementById('cyclingBookBtn');
+        const ctaBookBtn = document.getElementById('ctaBookBtn');
+
+        function openModal(type, title) {
+            document.getElementById('bookingType').value = type;
+            document.getElementById('modalBookingTitle').innerText = title;
+            bookingModal.classList.remove('hidden');
+            setTimeout(() => {
+                bookingModal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        function closeModal() {
+            bookingModal.classList.add('opacity-0');
+            setTimeout(() => {
+                bookingModal.classList.add('hidden');
+            }, 300);
+        }
+
+        if (ptConsultBtn) {
+            ptConsultBtn.addEventListener('click', () => openModal('PT Consultation', 'Book PT Session'));
+        }
+        if (cyclingBookBtn) {
+            cyclingBookBtn.addEventListener('click', () => openModal('Cycling Class', 'Book Cycling Session'));
+        }
+        if (ctaBookBtn) {
+            ctaBookBtn.addEventListener('click', () => openModal('General Booking', 'Book a Class'));
+        }
+
+        closeBookingModal.addEventListener('click', closeModal);
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) closeModal();
+        });
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBookingBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Processing...</span>';
+
+            const payload = {
+                name: document.getElementById('bookingName').value.trim(),
+                email: document.getElementById('bookingEmail').value.trim(),
+                phone: document.getElementById('bookingPhone').value.trim(),
+                type: document.getElementById('bookingType').value
+            };
+
+            fetch('/api/consultations', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('Booking failed');
+                return res.json();
+            })
+            .then(data => {
+                alert('Booking Confirmed! A fitness expert will contact you shortly.');
+                bookingForm.reset();
+                closeModal();
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Error processing booking. Please try again.');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Confirm Booking</span>';
+            });
+        });
+    </script>
+</body></html>

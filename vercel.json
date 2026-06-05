@@ -1,14 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/**/*.js", "use": "@vercel/node" },
-    { "src": "public/**", "use": "@vercel/static" }
+    { "src": "api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/membership", "dest": "/public/membership.html" },
-    { "src": "/join", "dest": "/public/join.html" },
-    { "src": "/admin", "dest": "/public/admin.html" },
-    { "src": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|css|js|woff|woff2|ttf))", "dest": "/public/$1" }
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
